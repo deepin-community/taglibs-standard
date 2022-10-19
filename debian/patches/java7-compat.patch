@@ -1,0 +1,25 @@
+Index: jakarta-taglibs-standard/standard/src/org/apache/taglibs/standard/tag/common/sql/DataSourceWrapper.java
+===================================================================
+--- jakarta-taglibs-standard.orig/standard/src/org/apache/taglibs/standard/tag/common/sql/DataSourceWrapper.java	2012-06-12 21:40:55.049170000 +0100
++++ jakarta-taglibs-standard/standard/src/org/apache/taglibs/standard/tag/common/sql/DataSourceWrapper.java	2012-06-12 21:41:52.171712718 +0100
+@@ -25,6 +25,9 @@
+ 
+ import org.apache.taglibs.standard.resources.Resources;
+ 
++import java.sql.SQLFeatureNotSupportedException;
++import java.util.logging.Logger;
++
+ 
+ /**
+  * <p>A simple <code>DataSource</code> wrapper for the standard
+@@ -125,4 +128,10 @@
+         return null;
+     }
+ 
++    /*
++     * JDBC 4.1
++     */
++    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
++        throw new SQLFeatureNotSupportedException();
++    }
+ }

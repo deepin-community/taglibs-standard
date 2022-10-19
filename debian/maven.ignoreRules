@@ -1,0 +1,6 @@
+
+org.apache.maven.plugins maven-checkstyle-plugin * * * *
+org.apache.maven.plugins maven-pmd-plugin * * * *
+org.codehaus.mojo findbugs-maven-plugin * * * *
+org.codehaus.mojo javancss-maven-plugin * * * *
+org.codehaus.mojo taglist-maven-plugin * * * *

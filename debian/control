@@ -1,0 +1,49 @@
+Source: taglibs-standard
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Emmanuel Bourg <ebourg@apache.org>
+Build-Depends:
+ debhelper (>= 9),
+ default-jdk,
+ junit4,
+ libeasymock-java,
+ libmaven-bundle-plugin-java,
+ libservlet3.1-java,
+ libxalan2-java,
+ maven-debian-helper (>= 2.0~)
+Standards-Version: 3.9.8
+Vcs-Git: https://anonscm.debian.org/git/pkg-java/taglibs-standard.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/taglibs-standard.git
+Homepage: http://tomcat.apache.org/taglibs/standard/
+
+Package: libtaglibs-standard-spec-java
+Architecture: all
+Depends: ${misc:Depends}
+Description: Apache JSP Standard Taglib Specification API
+ JSTL can be used to embed logic in JSP pages without using embedded java code.
+ Various tags are defined for common tasks such as conditional execution, loops,
+ internationalization, XML processing etc.
+ .
+ This package is implementation of the JSP Standard Tag Library (JSTL)
+ Specification API.
+
+Package: libtaglibs-standard-impl-java
+Architecture: all
+Depends: ${misc:Depends}, libtaglibs-standard-spec-java
+Description: Apache JSP Standard Taglib Implementation
+ JSTL can be used to embed logic in JSP pages without using embedded java code.
+ Various tags are defined for common tasks such as conditional execution, loops,
+ internationalization, XML processing etc.
+ .
+ This package is an implementation of the JSP Standard Tag Library (JSTL).
+
+Package: libtaglibs-standard-jstlel-java
+Architecture: all
+Depends: ${misc:Depends}, libtaglibs-standard-impl-java, libtaglibs-standard-spec-java
+Description: Apache JSP Standard Taglib 1.0 EL Support
+ JSTL can be used to embed logic in JSP pages without using embedded java code.
+ Various tags are defined for common tasks such as conditional execution, loops,
+ internationalization, XML processing etc.
+ .
+ This package contains JSTL 1.0 tags using the original EL implementation.

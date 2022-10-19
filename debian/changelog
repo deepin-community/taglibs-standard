@@ -1,0 +1,84 @@
+taglibs-standard (1.2.5-2.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Mon, 28 Dec 2020 15:12:30 +0100
+
+taglibs-standard (1.2.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * Correct typo in debian/control. (Closes: #833058)
+
+ -- tony mancill <tmancill@debian.org>  Sun, 31 Jul 2016 09:00:57 -0700
+
+taglibs-standard (1.2.5-1) unstable; urgency=medium
+
+  * Team upload.
+  * Renamed the package to taglibs-standard
+  * New upstream release
+    - Replaced the binary packages with libtaglibs-standard-spec-java,
+      libtaglibs-standard-impl-java and libtaglibs-standard-jstel-java
+    - Removed 01-jdbc-compatibility.patch (fixed upstream)
+    - Removed CVE-2015-0254.patch (fixed upstream)
+    - Refreshed 02-servlet-api-compatibility.patch
+    - Build with maven-debian-helper instead of ant
+  * Standards-Version updated to 3.9.8
+  * Updated debian/watch to track the releases >= 1.2
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 21 Jul 2016 12:07:50 +0200
+
+jakarta-taglibs-standard (1.1.2-4) unstable; urgency=medium
+
+  * Team upload.
+  * Removed the Servlet, JSP and EL API jars from the classpath specified
+    in the manifest (Closes: #806905)
+  * Transition to the Servlet API 3.1 (Closes: #780701, #801012)
+  * debian/control:
+    - Removed the deprecated DM-Upload-Allowed field
+    - Standards-Version updated to 3.9.6 (no changes)
+    - Use canonical URLs for the Vcs-* fields
+  * Switch to debhelper level 9
+  * debian/rules: Improved the clean target
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 02 Dec 2015 23:29:51 +0100
+
+jakarta-taglibs-standard (1.1.2-3) unstable; urgency=high
+
+  * Team upload.
+  * Fix CVE-2015-0254 XXE and RCE via XSL extension in JSTL XML tags:
+    - Introduce new patch: d/patches/CVE-2015-0254.patch.
+    - Adjust source and target JVM parameters to 1.5.
+    (Closes: #779621).
+
+ -- Miguel Landaeta <nomadium@debian.org>  Sat, 14 Mar 2015 22:46:07 -0300
+
+jakarta-taglibs-standard (1.1.2-2) unstable; urgency=low
+
+  [ James Page ]
+  * Fix FTBFS with openjdk-7 (Closes: #678166, LP: #888941):
+    - d/patches/java7-compat.patch: Compatibility patch for compilation
+      with Java 7 API.
+  * Bumped Standards-Version: 3.9.3:
+    - d/copyright: Tidied deprecated field names and referenced released
+      version of DEP-5.
+  * Switch to debhelper >= 7 style rules:
+    - d/control: Drop cdbs Build-Depends, specify minimum versions for 
+      debhelper and maven-repo-helper.
+    - d/rules: Refactor to use minimal overrides.
+  * Provide taglibs:standard maven artifacts (Closes: #673119):
+    - d/libjakarta-taglibs-standard-java.poms: Specify location of pom
+      file and artifacts to install.
+    - d/libjakarta-taglibs-standard-java.jlibs: Dropped - no longer required.
+    - d/rules,d/poms/standard.pom: Grab pom file from maven central.
+
+  [ Niels Thykier ]
+  * Set DMUA to yes.
+
+ -- James Page <james.page@ubuntu.com>  Wed, 20 Jun 2012 00:38:32 +0200
+
+jakarta-taglibs-standard (1.1.2-1) unstable; urgency=low
+
+  * Initial version. (Closes: #630112)
+
+ -- Onkar Shinde <onkarshinde@ubuntu.com>  Thu, 09 Jun 2011 12:03:00 +0530

@@ -1,0 +1,5 @@
+
+junit junit jar s/4\..*/4.x/ * *
+javax.el s/el-api/javax.el-api/ * s/.*/3.0/ * *
+javax.servlet s/servlet-api/javax.servlet-api/ * s/.*/3.1/ * *
+javax.servlet.jsp s/jsp-api/javax.servlet.jsp-api/ * s/.*/2.3/ * *

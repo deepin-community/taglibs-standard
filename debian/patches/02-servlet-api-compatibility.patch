@@ -1,0 +1,17 @@
+Description: Fix the compatibility with the latest Servlet API
+Forwarded: no
+--- a/impl/src/main/java/org/apache/taglibs/standard/tag/common/core/ImportSupport.java
++++ b/impl/src/main/java/org/apache/taglibs/standard/tag/common/core/ImportSupport.java
+@@ -430,6 +430,12 @@
+             public void write(int b) throws IOException {
+                 bos.write(b);
+             }
++
++            public boolean isReady() {
++                return true;
++            }
++
++            public void setWriteListener(javax.servlet.WriteListener listener) {}
+         };
+ 
+         /**
